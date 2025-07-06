@@ -19,7 +19,7 @@ src/
 │   ├── FloatingActionButton.tsx
 │   ├── Navbar.tsx
 │   ├── TaskCard.tsx
-│   └── TaskList.tsx
+│   └── TaskList.tsx 
 │
 ├── pages/
 │   ├── HomePage.tsx
