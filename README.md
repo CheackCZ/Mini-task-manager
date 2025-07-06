@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+## Mini Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Jednoduchá React aplikace pro správu úkolů s využitím veřejného API pro získávání uživatelů. Umožňuje přidávat nové úkoly, zobrazovat jejich seznam, detail každého úkolu a přiřazovat úkoly uživatelům.
 
-Currently, two official plugins are available:
+### Použité technologie
+- [Vite](https://vitejs.dev/) + [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Router v6](https://reactrouter.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [MUI (Material UI)](https://mui.com/)
+- [Day.js](https://day.js.org/) – pro práci s datem
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Struktura složek
+```
+src/
+├── components/
+│   ├── AddTaskDialog.tsx
+│   ├── AddTaskForm.tsx
+│   ├── FloatingActionButton.tsx
+│   ├── Navbar.tsx
+│   ├── TaskCard.tsx
+│   └── TaskList.tsx
+│
+├── pages/
+│   ├── HomePage.tsx
+│   └── TaskPage.tsx
+│
+├── types/
+│   ├── Address.ts
+│   ├── Company.ts
+│   ├── Geo.ts
+│   ├── Task.ts
+│   └── User.ts
+│
+├── theme.ts
+├── App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Spuštění aplikace
+```bash
+npm install / npm i
+npm run dev
 ```
+
+### Možnosti pro rozšíření
+- Trvalé ukládání úkolů (namísto smazání po každém obnovení aplikace) do souborů nebo databáze.
+- Možnost upráv a mazání úkolů.
+- Přidání autentifikace a zároveň by každý uživatel viděl pouze svoje úkoly po přihlášení k účtu. (Lepší řešení než že na hlavní stránce jsou všechny úkoly a každý vidí a může pracovat s úkoly jiných uživatelů).
+- Filtrování úkolů podle atributů.
+
+### Autor
+**Ondřej Faltin**<br>
+*Student, SPŠE Ječná*<br>
+✉️ Email: ondra.faltin@gmail.com / faltin@spsejecna.cz<br>
+🖥️ Web: ondrejfaltin.cz
